@@ -8,16 +8,16 @@ export default function BubbleSort(props) {
     let graphBars = document.getElementsByClassName("graph-bar");
     for (let i = 0; i < arr.length; i++) {
       for (let j = i; j < arr.length; j++) {
-        if (arr[i] > arr[j]) {
-          let temp = arr[i];
-          arr[i] = arr[j];
-          arr[j] = temp;
+        if (arr[j] > arr[j + 1]) {
+          let temp = arr[j + 1];
+          arr[j] = arr[j];
+          arr[j + 1] = temp;
           setTimeout(() => {
             // const ar = [...arr.slice()];
-            graphBars[i].style.backgroundColor = "blue";
-            graphBars[i].style.height = `${arr[i]}px`;
             graphBars[j].style.backgroundColor = "blue";
-            graphBars[j].style.height = `${arr[j]}px`;
+            graphBars[j].style.height = `${arr[i]}px`;
+            graphBars[j+1].style.backgroundColor = "blue";
+            graphBars[j+1].style.height = `${arr[j]}px`;
             // setArray(ar);
           }, i * 1000);
         } else {
